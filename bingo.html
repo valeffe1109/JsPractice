@@ -1,0 +1,368 @@
+
+<html>
+
+<style>
+
+.red {
+
+
+
+  
+  height:50px;
+  width:50px;
+  display:flex;
+  justify-content:center;
+  border:1px solid white;
+  margin-right:10px;
+  margin-top:10px;
+  color:red;
+  border:5px solid black;
+  border-radius:10%;
+  ;
+  align-items:center;
+
+
+}
+
+button {
+
+margin: auto;
+width: 15%;
+padding: 10px;
+background-color: #353E4A;
+border-radius:30px;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+border:solid #353E4A;
+color:#FFFF;
+
+
+
+}
+
+.flex{
+
+    display:flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.container3 {
+
+  display:flex;
+  justify-content: center;
+  align-content: center;
+
+}
+
+
+.container {
+
+  float:left;
+}
+
+.container1 {
+
+  float:left;
+}
+
+.container2 {
+
+  float:left;
+}
+
+
+.num {
+
+  
+  height:50px;
+  width:50px;
+  display:flex;
+  justify-content:center;
+  border:1px solid white;
+  margin-right:10px;
+  margin-top:10px;
+  color:black;
+  border:5px solid black;
+  border-radius:10%;
+  ;
+  align-items:center;
+  
+
+}
+
+.knapp {
+
+  padding:20px;
+  margin-top:20px;
+}
+
+.pickedBG {color:red;}
+
+
+
+
+</style>
+
+
+
+
+
+
+<body>
+
+<div class="flex">
+<button class="bottone" onclick="CallNumber()"><p id="demo">Call a Number</p></button>
+
+
+
+</div>
+
+<center>
+<h1>Generate Card Numbers</h1>
+
+</center>
+
+
+<div class="container3">
+
+
+<div class="container">
+
+<div id="quad0" class="num"></div>
+<div id="quad1" class="num"></div>
+<div id="quad2" class="num"></div>
+<div id="quad3" class="num"></div>
+<div id="quad4" class="num"></div>
+<div id="quad5" class="num"></div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="container">
+
+  <div id=quad6 class=num></div>
+  <div id=quad7 class=num></div>
+  <div id=quad8 class=num></div>
+  <div id=quad9 class=num></div>
+  <div id=quad10 class=num></div>
+  <div id=quad11 class=num></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+ 
+  <div class="container1">
+
+    <div id=quad12 class=num></div>
+    <div id=quad13 class=num></div>
+    <div id=quad14 class=num></div>
+    <div id=quad15 class=num></div>
+    <div id=quad16 class=num></div>
+    <div id=quad17 class=num></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+    
+    
+    <div class="container2">
+
+      <div id=quad18 class=num></div>
+      <div id=quad19 class=num></div>
+      <div id=quad20 class=num></div>
+      <div id=quad21 class=num></div>
+      <div id=quad22 class=num></div>
+      <div id=quad23 class=num></div>
+      
+      
+      
+      
+      
+      
+      
+      
+      </div>
+
+  </div>
+
+
+
+
+
+  
+  
+
+  <center>
+    <input id="btn" class="knapp" type="button" value="New Card" onClick="lottoNumbers()">
+  </center>
+      
+     
+
+
+
+
+</body>
+
+
+
+
+
+<script>
+
+
+function getRndInteger(min, max) {
+  
+  return Math.floor(Math.random() * (max - min)) + min;
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+}
+
+
+function lottoNumbers()
+
+{
+
+
+  //Inizia un array vuoto
+  
+  var lottoNums=[];
+
+  // inizia un for loop
+
+  for(var i = 0;i<24;i++)
+  
+  {
+
+
+
+
+
+
+//RANDOM NUMBERS
+
+//MODIFICABILE COME VUOI 
+
+var temp = Math.floor(Math.random()*75);
+
+
+
+//INDEX FUNZIONE - SE QUESTA FUNZIONE NON TROVA QUALCOSA RITORNA -1
+
+if (lottoNums.indexOf(temp)==-1)
+{
+
+
+  lottoNums.push(temp)
+
+  document.getElementById("quad"+i).innerHTML= lottoNums[i] ;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+else {
+
+  i--;
+}
+
+}
+
+}
+
+
+
+
+
+function evNum (randNum) {
+
+  var celle = document.getElementsByClassName("num")
+
+  for (var i = 0 ; i<celle.length; i++) {
+
+
+
+    
+
+    if(celle[i].innerHTML==randNum) {
+
+      celle[i].style.color="red"
+
+
+    }
+  }
+
+
+
+
+}
+
+
+function CallNumber() {
+
+var randNum= getRndInteger(0,75);
+  document.getElementById('demo').innerHTML = randNum;
+
+  evNum(randNum);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</html>
